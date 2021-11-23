@@ -1,0 +1,501 @@
+#bloc_page {
+    font-family: 'Ropa';
+    list-style: none;
+}
+
+@font-face {
+    font-family: "Ropa";
+    src: url(font/RopaSans-Regular.ttf);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+.margin-0 {
+    margin: 0;
+}
+
+.margin-bot-0 {
+    margin-bottom: 0;
+}
+
+.text-indent {
+    text-indent: 2em;
+}
+
+.text-white {
+    color: white;
+}
+
+.text-center {
+    text-align: center;
+}
+
+body {
+    padding: 0;
+    background-color: #ecf0f1;
+}
+
+/*-------------NAVIGATION-------------*/
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #34495e;
+    height: 10vh;
+}
+
+#menu>a {
+    display: none;
+}
+
+#hamburger {
+    display: block;
+}
+
+nav div p {
+    padding-left: 1rem;
+    color: #95a5a6;
+}
+
+nav ul {
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    padding: 1rem;
+}
+
+ul li a {
+    position: relative;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+ul li a::after {
+    position: absolute;
+    content: "";
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #e74c3c;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+
+ul li a:hover {
+    color: #95a5a6;
+}
+
+ul li a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.jumbotron {
+    height: 68vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.jumbotron-accueil {
+    background: linear-gradient( rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(Images/jumbotron-accueil.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.jumbotron-metier {
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(Images/jumbotron-metier.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.jumbotron-cv {
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(Images/jumbotron-cv.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.jumbotron-poster {
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(Images/jumbotron-poster.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    nav {
+        flex-direction: column;
+        justify-content: center;
+        padding-bottom: 1rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    #menu {
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    #menu>a {
+        display: flex;
+        justify-content: flex-end;
+    }
+    #menu>a>img {
+        width: 15%;
+    }
+    #menu #hamburger {
+        display: none;
+    }
+}
+
+/*-------------CORPS DE PAGE-------------*/
+
+/*-------------ACCUEIL-------------*/
+
+.row {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 2rem 0;
+}
+
+.home-box {
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40vh;
+    font-size: 1.5em;
+    transition: .3s;
+}
+
+.home-box:hover {
+    transform: scale(1.065);
+    box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.15);
+}
+
+.home-box:first-child {
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(Images/metier-accueil.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-box:nth-child(2) {
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(Images/cv-accueil.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home-box:last-child {
+    background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(Images/poster-accueil.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .row {
+        flex-wrap: wrap;
+    }
+    .home-box {
+        width: 40%;
+        margin: 1rem;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .home-box {
+        width: 90%;
+        height: 50vh;
+        margin: 1rem;
+    }
+}
+
+/*-------------METIER-------------*/
+
+.row-metier {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.article-metier {
+    width: 45%;
+    background-color: white;
+    border-radius: 1%;
+    margin: 2rem;
+}
+
+.article-metier div {
+    padding: 2.5rem;
+}
+
+.row-metier-synthese {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding-bottom: 3rem;
+}
+
+.article-metier-synthese {
+    width: 96%;
+    background-color: white;
+    border-radius: 3%;
+}
+
+.texte-synthese {
+    padding: 2.5rem;
+    padding-top: 0;
+}
+
+.article-metier-synthese .margin-bot-0:first-of-type {
+    padding-top: 2em;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .row-metier {
+        flex-direction: column;
+        align-items: center;
+    }
+    .article-metier {
+        width: auto;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .row-metier {
+        flex-direction: column;
+        align-items: center;
+    }
+    .article-metier {
+        width: 100%;
+    }
+    .article-metier-synthese {
+        width: 100%;
+        background-color: white;
+        border-radius: 3%;
+    }
+}
+
+/*-------------CV-------------*/
+
+#cv {
+    margin: 2rem 5rem;
+    background-color: white;
+    border-radius: 2%;
+}
+
+#cv section {
+    text-align: center;
+}
+
+#cv section:first-of-type {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 1rem;
+}
+
+#photo-cv {
+    background-image: url(Images/profil-cv.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 150px;
+    border-radius: 50%;
+    height: 150px;
+}
+
+#competences {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-evenly;
+}
+
+.elements {
+    width: 24%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container {
+    width: 100%;
+    background: rgba(44, 62, 80, 0.8);
+}
+
+.skill {
+    text-align: right;
+    color: white;
+}
+
+.html {
+    width: 80%;
+    background-color: #f06529;
+}
+
+.css {
+    width: 75%;
+    background-color: #264de4;
+}
+
+.java {
+    width: 45%;
+    background-color: #5382a1;
+}
+
+.python {
+    width: 25%;
+    background-color: #FFD43B;
+}
+
+.bash {
+    width: 45%;
+    background-color: #3BCEAC;
+}
+
+.sql {
+    width: 50%;
+    background-color: #00758F;
+}
+
+.os {
+    width: 75%;
+    background-color: red;
+}
+
+.git {
+    width: 75%;
+    background-color: black;
+}
+
+#cv section:last-of-type {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.row-cv {
+    display: flex;
+    align-items: center;
+}
+
+.row-cv div:last-of-type {
+    text-align: left;
+    padding-left: 1rem;
+}
+
+#cv article {
+    text-align: center;
+}
+#loisirs {
+    padding-bottom: 2rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+    .elements {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .elements {
+        width: 40%;
+    }
+    #cv section:last-of-type {
+        flex-direction: column;
+        align-items: center;
+    }
+    .row-cv {
+        flex-direction: column;
+        align-items: center;
+    }
+    .row-cv div:last-of-type {
+        text-align: center;
+    }
+    #cv {
+        margin: 0;
+        background-color: white;
+        border-radius: 2%;
+    }
+}
+
+/*-------------POSTER-------------*/
+
+.row-poster {
+    display: flex;
+    justify-content: center;
+}
+
+.poster-box>img{
+    width: 50%;
+}
+
+/*-------------FOOTER-------------*/
+
+footer {
+    background-color: #2c3e50;
+    display: flex;
+    justify-content: space-around;
+    padding: 2rem;
+    color: white;
+}
+
+.footer-left, .footer-right {
+    width: 40%;
+    text-align: center;
+}
+
+.icons a i {
+    padding: 1rem;
+}
+
+.footer-right div {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.footer-right div i {
+    padding-right: 1rem;
+}
+
+.about {
+    line-height: 1em;
+}
+
+i {
+    color: #e74c3c;
+    transition: color .5s;
+}
+
+i:hover {
+    color: black;
+    transform: scale(1.3);
+    transition: all .5s;
+}
+
+@media screen and (max-width: 767px) {
+    footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-left, .footer-right {
+        width: auto;
+    }
+}
